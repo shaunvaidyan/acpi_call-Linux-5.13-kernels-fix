@@ -10,8 +10,9 @@ My Thinkpad T480 running Fedora 35 was constantly freezing and rebooting. Natura
 ``sudo apt purge acpi-call-dkms`` (Ubuntu)  
 ``sudo dnf remove acpi_call`` (Fedora)  
 
-2. Install git (if you don’t have it installed yet)  
-``sudo apt install git``  
+2. Install git & dkms (if you don’t have it installed yet)  
+``sudo apt install git dkms``  
+``sudo dnf install git dkms``  
 
 3. Clone the repository at nix-community/acpi_call  
 ``git clone https://github.com/nix-community/acpi_call.git``  
