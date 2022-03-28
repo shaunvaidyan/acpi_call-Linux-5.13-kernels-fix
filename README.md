@@ -1,11 +1,11 @@
 # acpi\_call 1.2.2 tutorial for fixing crashes with TLP and modern Thinkpads on Fedora and Ubuntu distros.
 This is a fork of [acpi_call](https://github.com/mkottman/acpi_call) maintained by the NixOS community.
 
-## acpi_call is the source of many crashes and freezing in my Fedora 35 install on my Thinkpad T480
+### acpi_call is the source of many crashes and freezing in my Fedora 35 install on my Thinkpad T480
 
 My Thinkpad T480 running Fedora 35 was constantly freezing and rebooting. Naturally, I use the TLP package for power management and setting battery threshold levels. It appears that one of the dependencies ( I was able to trace the source of those crashes with a bug interaction between one of TLP's dependencies (acpi_call < 1.2.2) and linux kernals 5.13+. The acpi_call 1.2.2 package fixes the issues but the main repos for Canonical (Ubuntu) and Fedora builds package the acpi_call package from a dated source version of 1.2.1. The NixOS community produced an updated fork of the acpi_module so here is a tutorial for compiling and installing the module that I've used to address my issues.
 
-## Tutorial
+### Tutorial
 1. First remove previously installed acpi-call-dkms package (if any)
 ``sudo apt purge acpi-call-dkms`` (Ubuntu)
 ``sudo dnf remove acpi_call`` (Fedora)
@@ -28,7 +28,7 @@ My Thinkpad T480 running Fedora 35 was constantly freezing and rebooting. Natura
 10. Reboot
 ``sudo reboot``
 
-## Notes on dkms and Secure Boot
+### Notes on dkms and Secure Boot
 
 If that is the way you want to install this module, you can follow 
 [this guide](https://web.archive.org/web/20210215173902/https://gist.github.com/dop3j0e/2a9e2dddca982c4f679552fc1ebb18df) ([mirror](https://gist.github.com/s-h-a-d-o-w/53c2215e955c3326c6ec8f812a0d2f27))
