@@ -5,26 +5,35 @@ This is a fork of [acpi_call](https://github.com/mkottman/acpi_call) maintained 
 
 My Thinkpad T480 running Fedora 35 was constantly freezing and rebooting. Naturally, I use the TLP package for power management and setting battery threshold levels. It appears that one of the dependencies ( I was able to trace the source of those crashes with a bug interaction between one of TLP's dependencies (acpi_call < 1.2.2) and linux kernals 5.13+. The acpi_call 1.2.2 package fixes the issues but the main repos for Canonical (Ubuntu) and Fedora builds package the acpi_call package from a dated source version of 1.2.1. The NixOS community produced an updated fork of the acpi_module so here is a tutorial for compiling and installing the module that I've used to address my issues.
 
-### Tutorial
+### Tutorial  
 1. First remove previously installed acpi-call-dkms package (if any)  
 ``sudo apt purge acpi-call-dkms`` (Ubuntu)  
 ``sudo dnf remove acpi_call`` (Fedora)  
+
 2. Install git (if you don’t have it installed yet)  
 ``sudo apt install git``  
+
 3. Clone the repository at nix-community/acpi_call  
 ``git clone https://github.com/nix-community/acpi_call.git``  
+
 4. Navigate to cloned repo  
 ``cd acpi_call``  
+
 5. Prepare dkms.conf file  
 ``make dkms.conf``  
+
 6. Copy the module source to the shared sources directory  
 ``sudo cp -R . /usr/src/acpi-call-1.2.2``  
+
 7. Add the module to the dkms tree for build  
 ``sudo dkms add -m acpi-call -v 1.2.2``  
+
 8. Build the module  
 ``sudo dkms build -m acpi-call -v 1.2.2``  
+
 9. Install the module  
 ``sudo dkms install -m acpi-call -v 1.2.2``  
+
 10. Reboot  
 ``sudo reboot``  
 
