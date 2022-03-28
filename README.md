@@ -1,4 +1,4 @@
-# acpi\_call 1.2.2 tutorial for fixing crashes with TLP and modern Thinkpads on Fedora and Ubuntu distros.
+# acpi\_call 1.2.2 tutorial for fixing crashes on modern Thinkpads running Fedora and Ubuntu distros and the TLP power management package.
 This is a fork of [acpi_call](https://github.com/mkottman/acpi_call) maintained by the NixOS community.
 
 ### acpi_call is the source of many crashes and freezing in my Fedora 35 install on my Thinkpad T480
