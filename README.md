@@ -10,23 +10,23 @@ My Thinkpad T480 running Fedora 35 was constantly freezing and rebooting. Natura
 ``sudo apt purge acpi-call-dkms`` (Ubuntu)  
 ``sudo dnf remove acpi_call`` (Fedora)  
 2. Install git (if you don’t have it installed yet)  
-``sudo apt install git``
+``sudo apt install git``  
 3. Clone the repository at nix-community/acpi_call  
-``git clone https://github.com/nix-community/acpi_call.git``
+``git clone https://github.com/nix-community/acpi_call.git``  
 4. Navigate to cloned repo  
-``cd acpi_call``
+``cd acpi_call``  
 5. Prepare dkms.conf file  
-``make dkms.conf``
+``make dkms.conf``  
 6. Copy the module source to the shared sources directory  
-``sudo cp -R . /usr/src/acpi-call-1.2.2``
+``sudo cp -R . /usr/src/acpi-call-1.2.2``  
 7. Add the module to the dkms tree for build  
-``sudo dkms add -m acpi-call -v 1.2.2``
+``sudo dkms add -m acpi-call -v 1.2.2``  
 8. Build the module  
-``sudo dkms build -m acpi-call -v 1.2.2``
+``sudo dkms build -m acpi-call -v 1.2.2``  
 9. Install the module  
-``sudo dkms install -m acpi-call -v 1.2.2``
+``sudo dkms install -m acpi-call -v 1.2.2``  
 10. Reboot  
-``sudo reboot``
+``sudo reboot``  
 
 ### Notes on dkms and Secure Boot
 
