@@ -7,8 +7,8 @@ My Thinkpad T480 running Fedora 35 was constantly freezing and rebooting. Natura
 
 ### Tutorial
 1. First remove previously installed acpi-call-dkms package (if any)  
-``sudo apt purge acpi-call-dkms`` (Ubuntu)
-``sudo dnf remove acpi_call`` (Fedora)
+``sudo apt purge acpi-call-dkms`` (Ubuntu)  
+``sudo dnf remove acpi_call`` (Fedora)  
 2. Install git (if you don’t have it installed yet)  
 ``sudo apt install git``
 3. Clone the repository at nix-community/acpi_call  
